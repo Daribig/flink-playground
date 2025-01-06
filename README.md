@@ -167,4 +167,7 @@ jar -tf <jar>
 
 ## Notes to self
 - Purpose of `dependency-reduced-pom.xml` - [SO Answer](https://stackoverflow.com/a/35638574).
-  - TLDR: The dependency-reduced-pom.xml removes transitive dependencies which are already in your shaded jar. This prevents consumers from pulling them in twice.
+  - TLDR:
+    - The `dependency-reduced-pom.xml` removes transitive dependencies which are already in your shaded jar. This prevents consumers from pulling them in twice.
+    - We don't have any consumers of this package, so don't worry about it
+    - It's a build artifact - it's output/generated from a `mvn build` build.
