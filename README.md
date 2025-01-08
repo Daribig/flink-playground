@@ -177,7 +177,7 @@ jar -tf <jar>
 ![flink-kafka-foundational-feedback-loop.drawio.png](./doc/flink-kafka-foundational-feedback-loop.drawio.png)
 
 - Confluent course's cheatsheet - [Link](https://github.com/confluentinc/learn-building-flink-applications-in-java-exercises/blob/main/cheatsheet.md)
-  - I've also cloned it to [here](./cheatsheet.md)
+  - I've also cloned it to [here](./doc/cheatsheet.md)
 
 ## Notes to self
 - Purpose of `dependency-reduced-pom.xml` - [SO Answer](https://stackoverflow.com/a/35638574).
