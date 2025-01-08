@@ -70,6 +70,12 @@ Create topic
 bin/kafka-topics.sh --create --topic event-queue --bootstrap-server localhost:9092
 ```
 
+Delete topic
+
+```shell
+kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic event-queue
+```
+
 REPL for writing to topic
 
 ```shell
@@ -97,10 +103,10 @@ alias flink=$(pwd)/bin/flink
 
 #### Create cluster
 
-Create cluster with 1 worker
+Create cluster with 2 workers
 
 ```shell
-bin/start-cluster.sh
+bin/start-cluster.sh # creates a cluster with 1 orchestrator and 1 worker
 bin/taskmanager.sh start # repeat n times to create n workers
 ```
 
@@ -160,10 +166,16 @@ mvn clean package # built jar is placed at `target/kafka-playground-0.1.jar`
 
 ### Misc
 
-List classes in JAR
+- List classes in JAR
+
 ```shell
 jar -tf <jar>
 ```
+
+- `daribig.streaming.PlaygroundJob` defines the following bare-bones, and therefore foundational, local feedback loop: (assumes you've setup shell REPLs for 1/ writing records into the pipeline and 2/ reading records emitted from the pipeline - see above commands for how to set this up)
+
+![flink-kafka-foundational-feedback-loop.drawio.png](./doc/flink-kafka-foundational-feedback-loop.drawio.png)
+
 
 ## Notes to self
 - Purpose of `dependency-reduced-pom.xml` - [SO Answer](https://stackoverflow.com/a/35638574).
