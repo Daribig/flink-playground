@@ -70,6 +70,12 @@ Create topic
 bin/kafka-topics.sh --create --topic event-queue --bootstrap-server localhost:9092
 ```
 
+Delete topic
+
+```shell
+kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic event-queue
+```
+
 REPL for writing to topic
 
 ```shell
@@ -97,10 +103,10 @@ alias flink=$(pwd)/bin/flink
 
 #### Create cluster
 
-Create cluster with 1 worker
+Create cluster with 2 workers
 
 ```shell
-bin/start-cluster.sh
+bin/start-cluster.sh # creates a cluster with 1 orchestrator and 1 worker
 bin/taskmanager.sh start # repeat n times to create n workers
 ```
 
